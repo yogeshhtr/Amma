@@ -6,7 +6,7 @@ A very simple Nepali video app for Amma (Grandma), for Android phones and Androi
 ## What she sees
 * **Opening picture** – green, golden ॐ, lotus and two diyas (2 s; tap to skip).
 * **Top row of round icons** (always there, the current one has a gold ring):
-  🏠 home · 📺 serials · 🎬 movies · 📖 Herne Katha · 🙏 god / bhajan · 🕉 pravachan · 📡 live TV (only after an
+  🏠 home · 📺 serials · 🙏 god / bhajan · 🕉 pravachan · 📖 Herne Katha · 🎬 movies · 📡 live TV (only after an
   m3u link was added – always after the YouTube icons) · 🆕/🔀 order of the home page (home only)
 * **🏠 Home (opens first)** – the newest videos of everything mixed: serial episodes, movies, Herne Katha, bhajan,
   pravachan. The newest of every program first, not-yet-watched first. Each picture has a small corner icon
@@ -33,7 +33,7 @@ A very simple Nepali video app for Amma (Grandma), for Android phones and Androi
 * New episodes come by themselves (lists older than 3 hours are downloaded again in the background).
 
 ## For the family (helper menu)
-Long-press the **logo** (top left) or press the **Menu** key on a remote:
+Hold the **🏠** button (top left) or press the **Menu** key on a remote:
 * ↻ download everything again
 * ＋ add a YouTube channel link / @name, playlist link, video link (= that channel's videos) or search words to a tile
 * 📡 add live TV: an **m3u** link. Its channels appear under 📡, after the YouTube icons (copy-protected channels

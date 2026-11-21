@@ -13,7 +13,6 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.HorizontalScrollView
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -33,7 +32,7 @@ import kotlin.random.Random
  *             (newest first, not-yet-watched first) – or shuffled
  *  a tile   = its programs (each with the picture of its newest video) → the videos
  *
- * Long-press the logo (or the Menu key) opens a small helper menu for the family.
+ * Holding 🏠 (or the Menu key) opens a small helper menu for the family.
  */
 class HomeActivity : AppCompatActivity() {
     private lateinit var recycler: RecyclerView
@@ -82,12 +81,6 @@ class HomeActivity : AppCompatActivity() {
             gravity = Gravity.CENTER_VERTICAL
             setPadding(Ui.dp(this@HomeActivity, 12), Ui.dp(this@HomeActivity, 8), 0, Ui.dp(this@HomeActivity, 4))
         }
-        val logo = ImageView(this).apply {
-            setImageResource(R.mipmap.ic_launcher_round)
-            setOnLongClickListener { helperMenu(); true }
-        }
-        val ls = Ui.dp(this, 52)
-        header.addView(logo, LinearLayout.LayoutParams(ls, ls).apply { marginEnd = Ui.dp(this@HomeActivity, 6) })
         val scroll = HorizontalScrollView(this).apply { isHorizontalScrollBarEnabled = false }
         iconRow = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
@@ -146,7 +139,10 @@ class HomeActivity : AppCompatActivity() {
         if (key == iconsKey) return
         iconsKey = key
         iconRow.removeAllViews()
-        iconRow.addView(iconButton("🏠", 0xFF2E7D32.toInt(), home) { goHome() })
+        // 🏠 first; holding it opens the helper menu for the family
+        iconRow.addView(iconButton("🏠", 0xFF2E7D32.toInt(), home) { goHome() }.apply {
+            setOnLongClickListener { helperMenu(); true }
+        })
         for (sec in Catalog.sections(this)) {
             iconRow.addView(iconButton(sec.emoji, sec.color, section?.id == sec.id) { openSection(sec) })
         }

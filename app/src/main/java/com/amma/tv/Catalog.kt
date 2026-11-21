@@ -55,14 +55,6 @@ object Catalog {
             serial("bhadragol", "भद्रगोल", "bhadragol", "bhadragol", "भद्रगोल"),
             serial("jirekhursani", "जिरे खुर्सानी", "jire khursani", "jire khursani", "जिरे खुर्सानी")
         )),
-        Section("movie", "चलचित्र", "🎬", 0xFFC62828.toInt(), false, listOf(
-            Show("movies_new", "नेपाली चलचित्र", "search", "nepali full movie", minMinutes = 60),
-            Show("movies_old", "पुराना चलचित्र", "search", "old nepali movie full", minMinutes = 60),
-            Show("movies_osr", "OSR चलचित्र", "channel", "@osrmovies,@OSRMovies,@osrdigital")
-        )),
-        Section("katha", "हेर्ने कथा", "📖", 0xFF6A1B9A.toInt(), false, listOf(
-            Show("hernekatha", "हेर्ने कथा", "channel", "@hernekatha")
-        )),
         Section("bhakti", "भगवान", "🙏", 0xFFEF6C00.toInt(), false, listOf(
             Show("bhakti_list", "भक्ति कार्यक्रम", "playlist", "PL3jpwwk1eUXSvZb6Zq197etgUbE-Lh5d1"),
             Show("bhajan_np", "नेपाली भजन", "search", "nepali bhajan", minMinutes = 3),
@@ -70,6 +62,14 @@ object Catalog {
         )),
         Section("prabachan", "प्रवचन", "🕉", 0xFF00695C.toInt(), false, listOf(
             Show("gurukul", "प्रवचन", "channel", "@GuruKulProduction")
+        )),
+        Section("katha", "हेर्ने कथा", "📖", 0xFF6A1B9A.toInt(), false, listOf(
+            Show("hernekatha", "हेर्ने कथा", "channel", "@hernekatha")
+        )),
+        Section("movie", "चलचित्र", "🎬", 0xFFC62828.toInt(), false, listOf(
+            Show("movies_new", "नेपाली चलचित्र", "search", "nepali full movie", minMinutes = 60),
+            Show("movies_old", "पुराना चलचित्र", "search", "old nepali movie full", minMinutes = 60),
+            Show("movies_osr", "OSR चलचित्र", "channel", "@osrmovies,@OSRMovies,@osrdigital")
         )),
         // live TV: empty until an m3u link is added in the helper menu; always after the YouTube tiles
         Section("tv", "टिभी", "📡", 0xFF37474F.toInt(), false, emptyList())
