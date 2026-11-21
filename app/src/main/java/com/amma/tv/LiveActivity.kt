@@ -92,9 +92,9 @@ class LiveActivity : AppCompatActivity() {
             isFocusable = false
         }
         root.addView(view, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
-        val touch = View(this).apply {
-            setOnClickListener { if (overlay.visibility == View.VISIBLE) overlay.visibility = View.GONE else showOverlay() }
-        }
+        // a tap shows / hides the buttons (outside apply: inside it "overlay" would mean the View's own overlay)
+        val touch = View(this)
+        touch.setOnClickListener { toggleOverlay() }
         root.addView(touch, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
         spinner = ProgressBar(this).apply { isIndeterminate = true }
         val ss = Ui.dp(this, 80)
@@ -136,6 +136,10 @@ class LiveActivity : AppCompatActivity() {
             }
             Ui.focusZoom(this)
         }
+    }
+
+    private fun toggleOverlay() {
+        if (overlay.visibility == View.VISIBLE) overlay.visibility = View.GONE else showOverlay()
     }
 
     private fun showOverlay() {
