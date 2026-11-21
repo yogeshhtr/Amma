@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Amma" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/amma_green</item>
+        <item name="colorPrimaryDark">@color/amma_green_dark</item>
+        <item name="colorAccent">@color/amma_gold</item>
+        <item name="android:windowBackground">@color/amma_green_dark</item>
+        <item name="android:statusBarColor">@color/amma_green_dark</item>
+        <item name="android:navigationBarColor">@color/amma_green_dark</item>
+    </style>
+
+    <!-- shown at once when the app is opened (before the picture screen is drawn): no white flash -->
+    <style name="Theme.Amma.Splash" parent="Theme.Amma">
+        <item name="android:windowBackground">@drawable/splash_window</item>
+    </style>
+
+    <style name="Theme.Amma.Fullscreen" parent="Theme.Amma">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>
