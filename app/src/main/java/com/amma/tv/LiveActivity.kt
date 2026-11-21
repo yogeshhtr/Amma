@@ -57,9 +57,7 @@ class LiveActivity : AppCompatActivity() {
         index = intent.getIntExtra(INDEX, 0).coerceIn(0, (urls.size - 1).coerceAtLeast(0))
         if (urls.isEmpty()) { finish(); return }
         setContentView(buildLayout())
-        @Suppress("DEPRECATION")
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+        hideBars()
         player = ExoPlayer.Builder(this).build().also { p ->
             view.player = p
             p.addListener(object : Player.Listener {
@@ -79,6 +77,12 @@ class LiveActivity : AppCompatActivity() {
             })
         }
         play(index)
+    }
+
+    @Suppress("DEPRECATION")
+    private fun hideBars() {
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_FULLSCREEN or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
     }
 
     private fun buildLayout(): View {

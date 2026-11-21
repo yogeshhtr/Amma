@@ -26,11 +26,11 @@ class SplashActivity : AppCompatActivity() {
         handler.postDelayed({ next() }, 2000)
     }
 
+    @Suppress("DEPRECATION")
     private fun next() {
         if (gone || isFinishing) return
         gone = true
         startActivity(Intent(this, HomeActivity::class.java))
-        @Suppress("DEPRECATION")
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         finish()
     }
